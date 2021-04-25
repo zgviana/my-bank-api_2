@@ -13,13 +13,8 @@ const app = express();
 (async () => {
   try {
     await mongoose.connect(
-      //'mongodb+srv://admin:sacola151@cluster0.90xaw.mongodb.net/bootcamp?retryWrites=true&w=majority',
+
       'mongodb+srv://' + process.env.USERDB + ':' + process.env.PWDDB + '@cluster0.90xaw.mongodb.net/bootcamp?retryWrites=true&w=majority',
-      // 'mongodb+srv://' +
-      // process.env.USERDB +
-      // ':' +
-      // process.env.PWDDB +
-      // '@bootcamp-smurc.mongodb.net/grades?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
