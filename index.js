@@ -1,6 +1,9 @@
 /*Imports */
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 import { accountRouter } from './routes/accountsRoutes.js';
 
@@ -10,7 +13,8 @@ const app = express();
 (async () => {
   try {
     await mongoose.connect(
-      'mongodb+srv://admin:sacola151@cluster0.90xaw.mongodb.net/bootcamp?retryWrites=true&w=majority',
+      //'mongodb+srv://admin:sacola151@cluster0.90xaw.mongodb.net/bootcamp?retryWrites=true&w=majority',
+      'mongodb+srv://' + process.env.USERDB + ':' + process.env.PWDDB + '@cluster0.90xaw.mongodb.net/bootcamp?retryWrites=true&w=majority',
       // 'mongodb+srv://' +
       // process.env.USERDB +
       // ':' +
