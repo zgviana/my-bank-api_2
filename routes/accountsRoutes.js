@@ -47,6 +47,14 @@ app.get('/menoresSaldosAccount/:numDados', async (req, res) => {
   }
 });
 
+app.get('/verificaAPPAtualizado', async (req, res) => {
+  try {
+    res.send('App atualizado v1');
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
 
 app.get('/maioresSaldosAccount/:numDados', async (req, res) => {
   const num = req.params.numDados;
